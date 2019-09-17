@@ -5,7 +5,7 @@ import com.sasadara.service.RegistrationService;
 public class CreateDemo {
 
 	public static void main(String[] args) {
-		boolean bb = RegistrationService.registerStudent("fdg","rt","fe","et","rtre","etrt","rr");
+		boolean bb = RegistrationService.registerStudent("fdg","rt","fe","et","rtre","etrt","rr","salt");
 		System.out.println(bb);
 	}
 

@@ -29,6 +29,7 @@ public class Registration extends HttpServlet {
     String userId;
     String password;
     String role;
+    String salt;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -39,10 +40,16 @@ public class Registration extends HttpServlet {
 		userId = request.getParameter("userId");
 		password = request.getParameter("password");
 		role = request.getParameter("role");
+		salt ="hiiamsalt";
 		
 		//call the service
-		boolean bb = RegistrationService.registerStudent(firstName1,middleName,lastName,email,userId,password,role);
+		boolean bb = RegistrationService.registerStudent(firstName1,middleName,lastName,email,userId,password,role,salt);
 		System.out.println(bb);
+		if(bb) {
+			response.sendRedirect("login.jsp");  
+		}
 	}
+	
+	
 
 }
