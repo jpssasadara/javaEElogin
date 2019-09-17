@@ -1,6 +1,8 @@
 package com.sasadara.controller;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sasadara.service.RegistrationService;
+import com.sasadara.service.getHashPW;
 
 /**
  * Servlet implementation class Registration
@@ -30,7 +33,7 @@ public class Registration extends HttpServlet {
     String password;
     String role;
     String salt;
-	
+    byte[] salt1;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		firstName1 = request.getParameter("firstName1");
@@ -42,6 +45,17 @@ public class Registration extends HttpServlet {
 		role = request.getParameter("role");
 		salt ="hiiamsalt";
 		
+		//generating a salt
+		try {
+			salt1=getHashPW.getSalt();
+			salt= salt1.toString();
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//generating the hashed pw according to generated salt
+		password = getHashPW.getSecurePassword(password,salt1);
 		//call the service
 		boolean bb = RegistrationService.registerStudent(firstName1,middleName,lastName,email,userId,password,role,salt);
 		System.out.println(bb);

@@ -27,6 +27,8 @@ public class RegistrationService {
 					salt slt = new salt(salt);
 					slt.setStuid(st);
 					
+				
+					
 					// start a transaction
 					session.beginTransaction();
 					
