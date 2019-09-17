@@ -1,0 +1,1 @@
+package com.sasadara.hibernate.util;
