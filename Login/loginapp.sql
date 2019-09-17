@@ -6,7 +6,8 @@
 -- Generation Time: Sep 17, 2019 at 01:42 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
-
+create database loginapp;
+use loginapp;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;

@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sasadara.service.RegistrationService;
+
 /**
  * Servlet implementation class Registration
  */
@@ -20,21 +22,27 @@ public class Registration extends HttpServlet {
     public Registration() {
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+    String firstName1;
+    String middleName;
+    String lastName;
+    String email;
+    String userId;
+    String password;
+    String role;
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		firstName1 = request.getParameter("firstName1");
+		middleName = request.getParameter("middleName");
+		lastName = request.getParameter("lastName");
+		email = request.getParameter("email");
+		userId = request.getParameter("userId");
+		password = request.getParameter("password");
+		role = request.getParameter("role");
+		
+		//call the service
+		boolean bb = RegistrationService.registerStudent(firstName1,middleName,lastName,email,userId,password,role);
+		System.out.println(bb);
 	}
 
 }

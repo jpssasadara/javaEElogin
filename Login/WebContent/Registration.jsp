@@ -41,35 +41,40 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Sign Up</h5>
-            <form class="form-signin">
+            <form class="form-signin" action="Registration" method="POST">
               
               <div class="form-label-group">
     			<label for="inputEmail">First Name</label>
                 <input type="text" id="firstName1" class="form-control" placeholder="first Name" name="firstName1" required autofocus>
               </div>
+              
+              <div class="form-label-group">
+                <label for="middleName">Middle Name</label>
+                <input type="text" id="middleName" class="form-control" placeholder="middleName" name= "middleName" required>
+              </div>
 
               <div class="form-label-group">
                 <label for="middleName">Last Name</label>
-                <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
+                <input type="text" id="lastName" class="form-control" placeholder="Last Name" name= "lastName" required>
               </div>
               
               <div class="form-label-group">
               	<label for="email">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="Email" required>
+                <input type="email" id="email" class="form-control" placeholder="Email" name = "email" required>
               </div>
               
               <div class="form-label-group">
               	<label for="userId">UserId</label>
-                <input type="text" id="userId" class="form-control" placeholder="UserId" required>
+                <input type="text" id="userId" class="form-control" placeholder="UserId" name="userId" required>
               </div>
               <div class="form-label-group">
               	<label for="password">Password</label>
-                <input type="password" id="middleName" class="form-control" placeholder="Password" required>
+                <input type="password" id="middleName" class="form-control" placeholder="Password" name="password" required>
               </div>
               
               <div class="form-label-group">
               	<label for="role">Role</label>
-                <input type="text" id="role" class="form-control" placeholder="role" required>
+                <input type="text" id="role" class="form-control" placeholder="role" name = "role" required>
               </div>
               
              
