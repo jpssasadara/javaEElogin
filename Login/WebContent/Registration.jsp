@@ -70,15 +70,21 @@
               	<label for="userId">UserId</label>
                 <input type="text" id="userId" class="form-control" placeholder="UserId" name="userId" required>
               </div>
+              
               <div class="form-label-group">
               	<label for="password">Password</label>
                 <input type="password" id="middleName" class="form-control" placeholder="Password" name="password" required>
               </div>
-              
+         
               <div class="form-label-group">
-              	<label for="role">Role</label>
-                <input type="text" id="role" class="form-control" placeholder="role" name = "role" required>
+                <label for="role">Role</label>
+              	<select name="role" class="form-control">
+  					<option value="Student">Student</option>
+  					<option value="Lecture">Lecture</option>
+				</select>
+              
               </div>
+              
               
              
               <hr><hr>

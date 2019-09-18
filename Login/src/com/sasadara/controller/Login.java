@@ -50,7 +50,19 @@ public class Login extends HttpServlet {
 		//checking part
 		if(hashedPW.equals(ss.getStuid().getPassword())) {
 			//success
-			response.sendRedirect("StudentDash.jsp");
+			if(ss.getStuid().getRole().equals("Student")) {
+				response.sendRedirect("StudentDash.jsp");
+			}else if(ss.getStuid().getRole().equals("Lecture")) {
+				response.sendRedirect("LectureDash.jsp");
+			}else if(ss.getStuid().getRole().equals("Admin")){
+				response.sendRedirect("AdminDash.jsp");
+			}else {
+				request.setAttribute("message", "Incorrect Username or Password !!! ");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
+				dispatcher.forward(request, response);
+			}
+			
+			
 		
 		}else {
 			//fail
