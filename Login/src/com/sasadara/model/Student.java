@@ -1,14 +1,17 @@
 package com.sasadara.model;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="user_table")
 public class Student {
+	//com.sasadara.model.Student.stuid, referenced property unknown: com.sasadara.model.salt.Student
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -36,6 +39,20 @@ public class Student {
 	@Column(name="Role")
 	public String Role;
 	
+	//@OneToOne(mappedBy="Student", 
+			//cascade={CascadeType.ALL})
+	/*private salt stuid;
+	
+	
+
+	public salt getStuid() {
+		return stuid;
+	}
+
+	public void setStuid(salt stuid) {
+		this.stuid = stuid;
+	}*/
+
 	public int getId() {
 		return id;
 	}

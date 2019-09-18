@@ -69,7 +69,9 @@ public class Registration extends HttpServlet {
 			}
 			
 			//generating the hashed pw according to generated salt
+			System.out.println("make==> "+password+" "+salt1);
 			password = getHashPW.getSecurePassword(password,salt1);
+			
 			//call the service
 			boolean bb = RegistrationService.registerStudent(firstName1,middleName,lastName,email,userId,password,role,salt);
 			System.out.println(bb);

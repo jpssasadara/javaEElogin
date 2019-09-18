@@ -30,7 +30,11 @@ public class salt {
 		super();
 		this.salt = salt;
 	}
-
+    
+	public salt() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}
