@@ -52,9 +52,11 @@ for(Cookie cookie : cookies){
 }
 if(userName == null) response.sendRedirect("login.jsp");
 %>
-<h3>Hi <%=userName %> Mr <%=email %>, Login successful.</h3>
+<div class ="well">Lecture View</div>
+<hr><hr>
+<h3>Hi User Role --> <%=userName %> -- Email -->  <%=email %>, Login successful.</h3>
 <br>
 
-Lecture
+
 </body>
 </html>

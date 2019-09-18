@@ -33,6 +33,30 @@
     </ul>
   </div>
 </nav>
-Admin
+<%
+String userName = null;
+String email=null;
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("role") && cookie.getValue().equals("Admin")) 
+	{
+		userName = cookie.getValue();
+		
+	}
+	if(cookie.getName().equals("email") ) 
+	{
+		email = cookie.getValue();
+		
+	}}
+}
+if(userName == null) response.sendRedirect("login.jsp");
+%>
+<div class ="well">Admin View</div>
+<hr><hr>
+<h3>Hi User Role --> <%=userName %> -- Email -->  <%=email %>, Login successful.</h3>
+<br>
+
+<li><a href="check.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 </body>
 </html>
