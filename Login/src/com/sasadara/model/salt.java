@@ -24,9 +24,9 @@ public class salt {
 	private Student stuid;
 	
 	@Column(name="salt")
-	private String salt;
+	private byte[] salt;
 
-	public salt(String salt) {
+	public salt(byte[] salt) {
 		super();
 		this.salt = salt;
 	}
@@ -51,11 +51,11 @@ public class salt {
 		this.stuid = stuid;
 	}
 
-	public String getSalt() {
+	public byte[] getSalt() {
 		return salt;
 	}
 
-	public void setSalt(String salt) {
+	public void setSalt(byte[] salt) {
 		this.salt = salt;
 	}
 

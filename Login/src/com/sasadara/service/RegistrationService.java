@@ -9,7 +9,7 @@ import com.sasadara.model.salt;
 
 public class RegistrationService {
 	public static boolean registerStudent(String firstName1, String middleName, String lastName, String email, String userId, String password,
-			String role , String salt) {
+			String role , byte[] salt) {
 		// create session factory
 				SessionFactory factory = new Configuration()
 										.configure("hibernate.cfg.xml")

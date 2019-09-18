@@ -41,7 +41,8 @@ public class Login extends HttpServlet {
 		salt ss = GetPWLogin.saltObjectWithStudentReference(email);
 		System.out.println("hi salt "+ss.getSalt());
 		System.out.println("hi pw "+ss.getStuid().getPassword());
-		salt = ss.getSalt().getBytes();
+		salt = ss.getSalt();
+		
 		//calculate hash value according to user given password
 		String hashedPW = getHashPW.getSecurePassword(password,salt );
 		System.out.println("make==> "+password+" "+salt);
@@ -49,9 +50,7 @@ public class Login extends HttpServlet {
 		//checking part
 		if(hashedPW.equals(ss.getStuid().getPassword())) {
 			//success
-			request.setAttribute("message", "Incorrect Username or Password !!! ");
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/StudentDash.jsp");
-			dispatcher.forward(request, response);
+			response.sendRedirect("StudentDash.jsp");
 		
 		}else {
 			//fail

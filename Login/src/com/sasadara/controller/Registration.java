@@ -34,7 +34,7 @@ public class Registration extends HttpServlet {
     String userId;
     String password;
     String role;
-    String salt;
+    byte[]salt;
     byte[] salt1;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -45,7 +45,7 @@ public class Registration extends HttpServlet {
 		userId = request.getParameter("userId");
 		password = request.getParameter("password");
 		role = request.getParameter("role");
-		salt ="hiiamsalt";
+		
 		
 		if(!Checkemail.check(email)) {
 			Checkemail.result=false;
@@ -62,7 +62,8 @@ public class Registration extends HttpServlet {
 			//generating a salt
 			try {
 				salt1=getHashPW.getSalt();
-				salt= salt1.toString();
+				//salt= salt1.toString();
+				salt= salt1;
 			} catch (NoSuchAlgorithmException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
