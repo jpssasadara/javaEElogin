@@ -41,12 +41,14 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Sign In</h5>
+            <div class ="well">
              <%
              if(request.getAttribute("message")!=null){
             	 out.println(request.getAttribute("message"));
              }
 			    
 			%>
+			</div>
             <form class="form-signin" action="Login" method="POST">
               <div class="form-label-group">
                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>

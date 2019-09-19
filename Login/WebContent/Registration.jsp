@@ -36,9 +36,14 @@
   </div>
 </nav>
   <div class="container">
+  <div class = "well">
   <%
-			    out.println(request.getAttribute("message"));
+  if(request.getAttribute("message")!=null){
+	  out.println(request.getAttribute("message"));
+  }
+			    
    %>
+   </div>
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">

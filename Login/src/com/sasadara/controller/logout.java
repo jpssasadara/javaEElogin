@@ -1,6 +1,8 @@
 package com.sasadara.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -56,7 +58,10 @@ public class logout extends HttpServlet {
         	}
     	
     	
-    	response.sendRedirect("login.jsp");
+    	//response.sendRedirect("login.jsp");
+        	request.setAttribute("message", "successfully logout !!  ");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
+			dispatcher.forward(request, response);
 	}
 	
 	

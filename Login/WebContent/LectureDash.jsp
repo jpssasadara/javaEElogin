@@ -33,6 +33,7 @@
     </ul>
   </div>
 </nav>
+<div class="container">
 <%
 String userName = null;
 String email=null;
@@ -57,6 +58,6 @@ if(userName == null) response.sendRedirect("login.jsp");
 <h3>Hi User Role --> <%=userName %> -- Email -->  <%=email %>, Login successful.</h3>
 <br>
 
-
+</div>
 </body>
 </html>
