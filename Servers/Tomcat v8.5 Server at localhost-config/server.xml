@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Login" path="/Login" reloadable="true" source="org.eclipse.jst.jee.server:Login"/></Host>
+      <Context docBase="Login" path="/Login" reloadable="true" source="org.eclipse.jst.jee.server:Login"/><Context docBase="spring-security-demo-03-custom-login-form" path="/spring-security-demo-03-custom-login-form" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-03-custom-login-form"/><Context docBase="spring-security-demo-03-custom-login-formWith Bootstrap" path="/spring-security-demo-03-custom-login-formwith-Bootstrap" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-03-custom-login-formWith Bootstrap"/><Context docBase="spring-security-demo-03-custom-login-form-logout" path="/spring-security-demo-03-custom-login-formwith-Bootstrap-logout" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-03-custom-login-form-logout"/><Context docBase="spring-security-demo-03-custom-Role-Managing" path="/spring-security-demo-03-custom-Role-Managing" reloadable="true" source="org.eclipse.jst.jee.server:spring-security-demo-03-custom-Role-Managing"/></Host>
     </Engine>
   </Service>
 </Server>
